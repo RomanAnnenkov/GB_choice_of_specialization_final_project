@@ -7,27 +7,28 @@
 */
 
 string[] array = {"one", "two", "three", "four", "five", "six"};
-string[] arrayElementsLessThan3Char = ArrayElementsLessThan3Char(array);
+string[] arrayWithElementsLessThan = ArrayWithElementsLessThan(array);
 PrintArray(array);
 Console.Write(" -> ");
-PrintArray(arrayElementsLessThan3Char);
+PrintArray(arrayWithElementsLessThan);
 Console.WriteLine();
 
-string[] ArrayElementsLessThan3Char(string[] arr)
+string[] ArrayWithElementsLessThan(string[] arr, int maxChars = 3)
 {
     int resultArrayLength = 0;
     int resultArrayIndex = 0;
+    int maxElementLenth = maxChars + 1;
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i].Length < 4) resultArrayLength++;
+        if (arr[i].Length < maxElementLenth) resultArrayLength++;
     }
 
     string[] result = new string[resultArrayLength];
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i].Length < 4)
+        if (arr[i].Length < maxElementLenth)
         {
             result[resultArrayIndex] = arr[i];
             resultArrayIndex++;
