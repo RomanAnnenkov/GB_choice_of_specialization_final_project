@@ -6,6 +6,30 @@
 5. Call a method(from step 1) and pass an array(from step 4) to it.
 */
 
+string[] ArrayElementsLessThan3Char(string[] arr)
+{
+    int resultArrayLength = 0;
+    int resultArrayIndex = 0;
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 3) resultArrayLength++;
+    }
+
+    string[] result = new string[resultArrayLength];
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length < 3)
+        {
+            result[resultArrayIndex] = arr[i];
+            resultArrayIndex++;
+        }
+    }
+
+    return result;
+}
+
 void PrintArray(string[] arr)
 {
     Console.Write("[");
